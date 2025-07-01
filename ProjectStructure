@@ -1,0 +1,51 @@
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── com
+│   │           └── example
+│   │               └── restassuredframework
+│   │                   ├── config              # Configuration management
+│   │                   │   └── FrameworkConfig.java
+│   │                   │   └── ConfigManager.java
+│   │                   ├── auth                # Authentication utilities
+│   │                   │   └── AuthHelper.java
+│   │                   ├── api                 # API Service classes
+│   │                   │   ├── clients
+│   │                   │   │   └── UserService.java
+│   │                   │   │   └── ProductService.java
+│   │                   │   ├── models          # POJOs for request/response bodies
+│   │                   │   │   └── User.java
+│   │                   │   │   └── Product.java
+│   │                   │   └── spec
+│   │                   │       └── RequestSpecFactory.java
+│   │                   ├── utils               # General utilities
+│   │                   │   ├── JsonValidator.java
+│   │                   │   ├── XmlValidator.java
+│   │                   │   ├── TestDataReader.java
+│   │                   │   └── SerDeUtils.java
+│   │                   └── hooks               # Cucumber Hooks
+│   │                       └── ScenarioHooks.java
+│   ├── test
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── restassuredframework
+│   │   │               ├── stepdefs            # Cucumber Step Definitions
+│   │   │               │   └── UserSteps.java
+│   │   │               │   └── ProductSteps.java
+│   │   │               └── runner              # Cucumber Test Runner
+│   │   │                   └── TestRunner.java
+│   │   └── resources
+│   │       ├── features            # Cucumber Feature Files
+│   │       │   └── user_management.feature
+│   │       │   └── product_catalog.feature
+│   │       └── config              # Environment specific configuration files
+│   │           ├── dev.properties
+│   │           ├── qa.properties
+│   │           └── prod.properties
+│   │       └── schemas             # JSON/XML Schema files
+│   │           ├── user_schema.json
+│   │           └── product_schema.xml
+│   │       └── secrets             # Encrypted secrets (e.g., Jasypt encrypted file)
+│   │           └── secrets.properties.enc
+├── pom.xml                     # Maven Project Object Model
