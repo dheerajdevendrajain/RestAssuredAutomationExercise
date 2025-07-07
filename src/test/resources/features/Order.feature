@@ -23,3 +23,8 @@ Feature: Order Management API Tests
       | country | productOrderedId         |
       | India   | 67a8dde5c0d3e6622a297cc8 |
       | India   | 67a8df1ac0d3e6622a297ccb |
+    Then Get product details from order
+#    Then Validate the order details
+#      | productName | productCategory | productSubCategory | productPrice | productDescription | productImage                                                                    | productRating | productTotalOrders | productStatus | productAddedBy |
+#      | ZARA COAT 3 | fashion         | shirts             | 31500        | Adidas Originals   | https://rahulshettyacademy.com/api/ecom/uploads/productImage_1650649434146.jpeg | 0             | 0                  | true          |                |
+#    Then Get order
