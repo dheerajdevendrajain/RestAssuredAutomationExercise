@@ -24,7 +24,16 @@ Feature: Order Management API Tests
       | India   | 67a8dde5c0d3e6622a297cc8 |
       | India   | 67a8df1ac0d3e6622a297ccb |
     Then Get product details from order
-#    Then Validate the order details
-#      | productName | productCategory | productSubCategory | productPrice | productDescription | productImage                                                                    | productRating | productTotalOrders | productStatus | productAddedBy |
-#      | ZARA COAT 3 | fashion         | shirts             | 31500        | Adidas Originals   | https://rahulshettyacademy.com/api/ecom/uploads/productImage_1650649434146.jpeg | 0             | 0                  | true          |                |
-#    Then Get order
+    Then Validate the order details
+      | productName | productCategory | productSubCategory | productPrice | productDescription | productImage                                                                    | productRating | productTotalOrders | productStatus | productAddedBy |
+      | ZARA COAT 3 | fashion         | shirts             | 31500        | Adidas Originals   | https://rahulshettyacademy.com/api/ecom/uploads/productImage_1650649434146.jpeg | 0             | 0                  | true          |                |
+    When I retrieve all orders
+    Then the orders response message should be "Orders fetched for customer Successfully"
+    And the orders count should be 2
+    And I store all order IDs from the response
+    And I view order details for the all orders
+#    Then the order details should match the expected product details
+#      | _id                      | orderById                | orderBy     | productOrderedId         | productName     | country | productDescription | productImage                                                                   | orderPrice | __v |
+#      | 687388666eb377753098d9b7 | 68553c030e7068d39820bd0e | test@fd.com | 67a8df1ac0d3e6622a297ccb | ADIDAS ORIGINAL | India   | Addias Originals   | https://rahulshettyacademy.com/api/ecom/uploads/productImage_1650649488046.jpg | 31500      | 0   |
+    Then I delete the order with ID
+#    And I verify the order deletion response message is "Order deleted Successfully"
